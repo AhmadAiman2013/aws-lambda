@@ -1,0 +1,5 @@
+target
+/tofu/.terraform.lock.hcl
+/.idea/aws-lambda.iml
+/tofu/.terraform/
+/tofu/tfplan
