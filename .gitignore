@@ -3,3 +3,7 @@ target
 /.idea/aws-lambda.iml
 /tofu/.terraform/
 /tofu/tfplan
+/tofu/bootstrap.zip
+/bootstrap.zip
+/.idea/modules.xml
+/.idea/vcs.xml

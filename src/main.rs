@@ -4,7 +4,7 @@ use axum::routing::{get, post};
 use lambda_http::{run, tracing, Error};
 mod axum_handler;
 
-use crate::axum_handler::{get_name, get_parameters, health_check};
+use crate::axum_handler::{get_github_sucess, get_name, get_parameters, health_check};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -16,6 +16,7 @@ async fn main() -> Result<(), Error> {
         .route("/", get(health_check))
         .route("/health", get(health_check))
         .route("/params", post(get_parameters))
+        .route("/github", get(get_github_sucess))
         .route("/hello/{name}", get(get_name));
 
 

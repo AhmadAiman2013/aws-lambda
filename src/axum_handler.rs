@@ -14,6 +14,10 @@ pub async fn get_name(Path(name): Path<String>) -> Json<Value> {
     Json(json!({ "msg": name }))
 }
 
+pub async fn get_github_sucess() -> Json<Value> {
+    Json(json!({ "msg": "Github success" }))
+}
+
 pub async fn get_parameters(Query(params): Query<Params>) -> Json<Value> {
     Json(json!(params))
 }
