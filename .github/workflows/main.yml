@@ -31,13 +31,15 @@ jobs:
           profile: minimal
 
       - name: Cache cargo registry
-        uses: actions/cache@v3
-        continue-on-error: false
+        uses: actions/cache@v5
         with:
           path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-          key: cargo-build-cache
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Release lambda
         run: |

@@ -138,6 +138,13 @@ resource "aws_lambda_function" "aws_lambda" {
 resource "aws_apigatewayv2_api" "http_api" {
   name          = "aws-lambda-api"
   protocol_type = "HTTP"
+
+  cors_configuration {
+    allow_origins = ["http://localhost:4200"]
+    allow_methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allow_headers = ["Content-Type", "Authorization"]
+    max_age = 300
+  }
 }
 
 resource "aws_apigatewayv2_stage" "default" {
