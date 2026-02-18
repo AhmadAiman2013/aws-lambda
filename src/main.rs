@@ -16,7 +16,7 @@ async fn main() -> Result<(), Error> {
 
     tracing::init_default_subscriber();
 
-    let origins = ["http://localhost:4200".parse()?];
+    let origins = ["http://localhost:4200".parse()?, "https://d3h6bl8rffsevw.cloudfront.net/".parse()?];
 
     let cors = CorsLayer::new()
         .allow_origin(origins)
